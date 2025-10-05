@@ -1,0 +1,6 @@
+defaults:
+  - qwen3_8B
+  - _self_
+
+model_name: Qwen3-8B-sa-dpo
+lora_path: xxx

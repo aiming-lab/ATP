@@ -1,0 +1,17 @@
+defaults:
+  - model: qwen3_8B
+  - _self_
+
+# The selected model config above will be loaded; fields here are safe overrides
+model:
+  max_new_tokens: 32768
+
+settings:
+  dataset_path: "../data/sa_llm/question/question_64.json"
+  max_rounds: 6
+  history_window: 5
+  supervision_pattern: "all_unsupervised"
+  results_dir: "../results/sa_llm/${model.model_name}-r${settings.max_rounds}"
+
+experiments:
+  save_detailed_logs: true

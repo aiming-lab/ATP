@@ -1,0 +1,28 @@
+defaults:
+  - base
+  - _self_
+
+module_name: mytrain.grpo
+class_name: GRPOTrain
+
+remove_unused_columns: False
+max_prompt_length: 2048
+num_generations: 8
+per_device_train_batch_size: ${train.num_generations}
+per_device_eval_batch_size: ${train.num_generations}
+max_completion_length: 1024
+
+# temperature: 0.9
+# top_p: 1.0
+# top_k: 50
+# repetition_penalty: 1.0
+
+learning_rate: 1e-06
+beta: 0.04
+num_iterations: 1
+epsilon: 0.2
+reward_weights: null
+sync_ref_model: False
+ref_model_mixup_alpha: 0.5
+ref_model_sync_steps: 512
+log_completions: True

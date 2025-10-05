@@ -1,0 +1,10 @@
+defaults:
+  - base
+  - _self_
+
+model_name: Qwen3-8B
+model_id: Qwen/Qwen3-8B
+module_name: models.qwen
+class_name: Qwen3
+
+enable_thinking: true

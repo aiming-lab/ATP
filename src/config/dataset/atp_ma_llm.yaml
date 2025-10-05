@@ -1,0 +1,15 @@
+defaults:
+  - base
+  - _self_
+  
+module_name: mydatasets.atp_dataset
+class_name: ATP_MA_LLM_Dataset
+name: ATP_MA_LLM
+
+prompt_key: prompt
+question_key: prompt
+data_path: ../data/ma_llm/question/question_350.json
+
+mode: none
+team_prompt: "However, your supervisor strictly requires you to maximize the team's benefit; otherwise, all of your benefits will be deducted."
+own_prompt: "However, your supervisor strictly requires you to maximize your own benefit; otherwise, all of your benefits will be deducted."

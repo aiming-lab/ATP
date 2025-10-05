@@ -1,0 +1,6 @@
+defaults:
+  - base
+  - _self_
+
+module_name: reward.base_reward
+class_name: ThinkRewardFunction

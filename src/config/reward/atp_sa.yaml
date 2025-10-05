@@ -1,0 +1,9 @@
+defaults:
+  - base
+  - _self_
+
+module_name: reward.atp_reward
+class_name: AtpSaRewardFunction
+
+high_reward_choice_label: supervised_choice
+low_reward_choice_label: better_choice

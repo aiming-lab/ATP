@@ -1,0 +1,9 @@
+defaults:
+  - base
+  - _self_
+
+module_name: reward.atp_reward
+class_name: AtpMaRewardFunction
+
+high_reward_choice_label: independent_choice
+low_reward_choice_label: cooperative_choice

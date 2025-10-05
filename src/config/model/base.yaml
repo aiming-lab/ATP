@@ -1,0 +1,6 @@
+model_name: empty
+model_id: haha_this_is_empty
+module_name: haha
+class_name: empty
+max_new_tokens: 32768
+lora_path: null

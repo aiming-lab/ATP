@@ -1,0 +1,5 @@
+name: haha-this-is-empty:D
+top_k: 1
+truncate_len: null
+
+result_dir: ./results/${dataset.name}/${run-name}

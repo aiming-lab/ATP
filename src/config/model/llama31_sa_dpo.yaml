@@ -1,0 +1,6 @@
+defaults:
+  - llama31
+  - _self_
+
+model_name: Llama3.1-8B-sa-dpo
+lora_path: xxx

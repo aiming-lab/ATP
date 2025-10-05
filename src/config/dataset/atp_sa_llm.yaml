@@ -1,0 +1,11 @@
+defaults:
+  - base
+  - _self_
+  
+module_name: mydatasets.atp_dataset
+class_name: ATP_SA_LLM_Dataset
+name: ATP_SA_LLM
+
+prompt_key: prompt
+question_key: prompt
+data_path: ../data/sa_llm/question/question_160.json

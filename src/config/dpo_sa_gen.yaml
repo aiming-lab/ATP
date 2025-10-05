@@ -1,0 +1,13 @@
+defaults:
+  - dataset: atp_sa_llm
+  - model: qwen3_8B
+  - _self_
+
+run-name: ${model.model_name}-gen-dpo-sa
+cuda_visible_devices: '7'
+save_freq: 1
+max_retries: 5
+
+result_dir: ../results/sa_llm/dpo_train_data/${model.model_name}
+temp_result_dir: ../tmp/test_results/${run-name}
+max_workers: 6

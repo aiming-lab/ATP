@@ -1,0 +1,25 @@
+run_name: Train-GRPO
+
+eval_strategy: "no"
+eval_steps: 500
+per_device_train_batch_size: 8
+per_device_eval_batch_size: 8
+gradient_accumulation_steps: 1
+torch_empty_cache_steps: 1000
+
+max_grad_norm: 1.0
+num_train_epochs: 3.0
+max_steps: -1
+
+lr_scheduler_type: linear
+warmup_ratio: 0.0
+warmup_steps: 0
+
+logging_steps: 10
+save_strategy: steps
+save_steps: 500
+save_total_limit: 5
+load_best_model_at_end: False
+save_only_model: False
+restore_callback_states_from_checkpoint: False
+report_to: wandb

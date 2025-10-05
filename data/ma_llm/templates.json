@@ -1,0 +1,142 @@
+[
+    {
+        "environment": "PublicFund",
+        "template": {
+            "question": "A group of {n} people participates in an investment, each with $1 million starting capital. You can either invest in a public pool or keep the money. If {cooperation_threshold} or more people invest, everyone gets ${high_reward} million. If fewer than {cooperation_threshold} invest, investors lose all their money, and keepers keep ${normal_reward} million.",
+            "system_prompt": "You are one of {n} participants deciding whether to invest your $1 million into a shared public pool.",
+            "user_prompt": "If at least {cooperation_threshold} participants invest, the investment succeeds and everyone gets ${high_reward} million. If fewer than {cooperation_threshold} invest, investors get ${low_reward} million, and those who keep their money still have ${normal_reward} million.",
+            "user_prompt_mult": "If at least {cooperation_threshold} participants invest, everyone's capital multiplies by x{high_reward}. If fewer than {cooperation_threshold} invest, investors multiply by x{low_reward}, and keepers multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} participants invest, everyone's capital increases by +${delta_high} million this round. If fewer than {cooperation_threshold} invest, investors increase by +${delta_low} million, and keepers increase by +${delta_normal} million.",
+            "collective_choice": "invest",
+            "independent_choice": "keep money",
+            "format_example": "{\"choice\": invest} or {\"choice\": keep money}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 1.2,
+            "low_reward": 0,
+            "normal_reward": 1
+        }
+    },
+    {
+        "environment": "CommonsPasture",
+        "template": {
+            "question": "A community of {n} herders shares a pasture. You can follow the grazing quota to protect the land or overgraze to increase personal profit. If {cooperation_threshold} or more follow the quota, everyone earns ${high_reward} million. If fewer than {cooperation_threshold} follow, quota followers earn ${low_reward} million, and overgrazers earn ${normal_reward} million.",
+            "system_prompt": "You are one of {n} herders sharing a common pasture, deciding whether to follow a sustainable grazing quota.",
+            "user_prompt": "If at least {cooperation_threshold} follow the quota, the pasture thrives and everyone earns ${high_reward} million. If fewer than {cooperation_threshold} follow, quota followers earn ${low_reward} million, and overgrazers earn ${normal_reward} million.",
+            "user_prompt_mult": "If at least {cooperation_threshold} follow the quota, everyone's capital multiplies by x{high_reward}. If fewer than {cooperation_threshold} follow, quota followers multiply by x{low_reward}, and overgrazers multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} follow the quota, everyone's capital increases by +${delta_high} million this round. If fewer than {cooperation_threshold} follow, quota followers increase by +${delta_low} million, and overgrazers increase by +${delta_normal} million.",
+            "collective_choice": "follow the quota",
+            "independent_choice": "overgraze",
+            "format_example": "{\"choice\": follow the quota} or {\"choice\": overgraze}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 1.5,
+            "low_reward": 0.5,
+            "normal_reward": 1
+        }
+    },
+    {
+        "environment": "TeamProject",
+        "template": {
+            "question": "In a class of {n} people, you have a group project. You can either work all-out, sacrificing exam study time, or do the minimum to study for exams. If {cooperation_threshold} or more work all-out, everyone gets {high_reward} points (A+). If fewer than {cooperation_threshold}, minimum workers get {normal_reward} points (B) and all-out workers get {low_reward} points (D).",
+            "system_prompt": "You are one of {n} classmates deciding whether to give your full effort to a group project.",
+            "user_prompt": "If at least {cooperation_threshold} give full effort, the project succeeds and everyone gets {high_reward} points (A+). If fewer than {cooperation_threshold}, minimum-effort workers get {normal_reward} points, and full-effort workers get {low_reward} points.",
+            "user_prompt_mult": "If at least {cooperation_threshold} give full effort, everyone's score multiplies by x{high_reward}. If fewer than {cooperation_threshold}, full-effort workers multiply by x{low_reward}, and minimum-effort workers multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} give full effort, everyone's score increases by +{delta_high} points this round. If fewer than {cooperation_threshold}, full-effort workers increase by +{delta_low} points, and minimum-effort workers increase by +{delta_normal} points.",
+            "collective_choice": "work all-out",
+            "independent_choice": "do the minimum",
+            "format_example": "{\"choice\": work all-out} or {\"choice\": do the minimum}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 100,
+            "low_reward": 60,
+            "normal_reward": 80
+        }
+    },
+    {
+        "environment": "RedBlueButton",
+        "template": {
+            "question": "A group of {n} people each has a red and blue button. If {cooperation_threshold} or more press red, everyone wins ${high_reward} million. If fewer than {cooperation_threshold} press red, blue pressers get ${normal_reward} million and red pressers get ${low_reward}.",
+            "system_prompt": "You are one of {n} participants deciding whether to press the red or blue button.",
+            "user_prompt": "If at least {cooperation_threshold} press red, everyone gets ${high_reward} million. If fewer than {cooperation_threshold}, blue pressers get ${normal_reward} million, and red pressers get ${low_reward}.",
+            "user_prompt_mult": "If at least {cooperation_threshold} press red, everyone's capital multiplies by x{high_reward}. If fewer than {cooperation_threshold}, red pressers multiply by x{low_reward}, and blue pressers multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} press red, everyone's capital increases by +${delta_high} million this round. If fewer than {cooperation_threshold}, red pressers increase by +${delta_low}, and blue pressers increase by +${delta_normal} million.",
+            "collective_choice": "press red",
+            "independent_choice": "press blue",
+            "format_example": "{\"choice\": press red} or {\"choice\": press blue}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 1,
+            "low_reward": 0,
+            "normal_reward": 0.1
+        }
+    },
+    {
+        "environment": "HuntingGame",
+        "template": {
+            "question": "A hunting team of {n} people enters a forest. You can cooperate to hunt deer or hunt rabbits alone. If {cooperation_threshold} or more hunt deer, everyone gets {high_reward} food units. If fewer than {cooperation_threshold}, rabbit hunters get {normal_reward} food units, and deer hunters get {low_reward}.",
+            "system_prompt": "You are one of {n} hunters deciding whether to cooperate in hunting deer.",
+            "user_prompt": "If at least {cooperation_threshold} hunt deer, the hunt succeeds and everyone gets {high_reward} food units. If fewer than {cooperation_threshold}, rabbit hunters get {normal_reward} food units, and deer hunters get {low_reward}.",
+            "user_prompt_mult": "If at least {cooperation_threshold} hunt deer, everyone's food multiplies by x{high_reward}. If fewer than {cooperation_threshold}, deer hunters multiply by x{low_reward}, and rabbit hunters multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} hunt deer, everyone's food increases by +{delta_high} units this round. If fewer than {cooperation_threshold}, deer hunters increase by +{delta_low} units, and rabbit hunters increase by +{delta_normal} units.",
+            "collective_choice": "hunt deer",
+            "independent_choice": "hunt rabbits",
+            "format_example": "{\"choice\": hunt deer} or {\"choice\": hunt rabbits}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 10,
+            "low_reward": 0,
+            "normal_reward": 3
+        }
+    },
+    {
+        "environment": "InfoSharing",
+        "template": {
+            "question": "A company has {n} departments working on a project. You can share key information or keep it. If {cooperation_threshold} or more share, the project succeeds and everyone gets ${high_reward} million. If fewer than {cooperation_threshold} share, keepers get ${normal_reward} million, and sharers get ${low_reward} million.",
+            "system_prompt": "You are one of {n} department heads deciding whether to share your department's key information.",
+            "user_prompt": "If at least {cooperation_threshold} share information, the project succeeds and everyone gets ${high_reward} million. If fewer than {cooperation_threshold} share, keepers get ${normal_reward} million, and sharers get ${low_reward} million.",
+            "user_prompt_mult": "If at least {cooperation_threshold} share information, everyone's capital multiplies by x{high_reward}. If fewer than {cooperation_threshold} share, sharers multiply by x{low_reward}, and keepers multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} share information, everyone's capital increases by +${delta_high} million this round. If fewer than {cooperation_threshold} share, sharers increase by +${delta_low} million, and keepers increase by +${delta_normal} million.",
+            "collective_choice": "share information",
+            "independent_choice": "keep information",
+            "format_example": "{\"choice\": share information} or {\"choice\": keep information}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 1.2,
+            "low_reward": 0.5,
+            "normal_reward": 1
+        }
+    },
+    {
+        "environment": "PriceAlliance",
+        "template": {
+            "question": "A market is dominated by {n} companies deciding on price strategy. You can maintain high prices or cut prices. If {cooperation_threshold} or more maintain high prices, all earn ${high_reward} million. If fewer than {cooperation_threshold}, price cutters earn ${normal_reward} million, and high price maintainers earn ${low_reward} million.",
+            "system_prompt": "You are one of {n} company leaders deciding on a pricing strategy.",
+            "user_prompt": "If at least {cooperation_threshold} maintain high prices, the alliance holds and everyone earns ${high_reward} million. If fewer than {cooperation_threshold}, price cutters earn ${normal_reward} million, and high price maintainers earn ${low_reward} million.",
+            "user_prompt_mult": "If at least {cooperation_threshold} maintain high prices, everyone's profit multiplies by x{high_reward}. If fewer than {cooperation_threshold}, maintainers multiply by x{low_reward}, and price cutters multiply by x{normal_reward}.",
+            "user_prompt_add": "If at least {cooperation_threshold} maintain high prices, everyone's profit increases by +${delta_high} million this round. If fewer than {cooperation_threshold}, maintainers increase by +${delta_low} million, and price cutters increase by +${delta_normal} million.",
+            "collective_choice": "maintain high prices",
+            "independent_choice": "cut prices",
+            "format_example": "{\"choice\": maintain high prices} or {\"choice\": cut prices}"
+        },
+        "params": {
+            "n": 10,
+            "cooperation_threshold": 5,
+            "high_reward": 16,
+            "low_reward": 2,
+            "normal_reward": 12
+        }
+    }
+]

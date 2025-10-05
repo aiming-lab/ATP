@@ -1,0 +1,24 @@
+defaults:
+  - model: qwen3_8B
+  - _self_
+
+# The selected model config above will be loaded; fields here are safe overrides
+model:
+  max_new_tokens: 3276
+  enable_thinking: true
+
+settings:
+  dataset_path: "../data/ma_llm/templates.json"
+  results_dir: "../results/ma_llm/${model.model_name}-r${settings.max_rounds}-n${settings.n_agents}"
+  max_rounds: 3
+  n_agents: 8
+  peer_history_mode: final_only
+  thresholds_abs: [2,4,6,8]
+  reward_sets:
+    # - [1.2, 1.0, 0.2]
+    # - [1.2, 1.0, 0.6]
+    - [1.2, 1.0, 0.8]
+    # - [1.4, 1.0, 0.8]
+    # - [1.8, 1.0, 0.8]
+
+  

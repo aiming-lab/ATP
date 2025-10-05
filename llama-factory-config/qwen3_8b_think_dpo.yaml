@@ -1,0 +1,50 @@
+### model
+model_name_or_path: Qwen/Qwen3-8B
+trust_remote_code: true
+
+### method
+stage: dpo
+do_train: true
+finetuning_type: lora
+lora_rank: 8
+lora_target: all
+pref_beta: 0.1
+pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
+
+### dataset
+dataset: arc_dpo_qwen_sa_llm # change the dataset name to what you set in dataset_info.json
+template: qwen3
+enable_thinking: true  # ensure slow-thinking CoT handling
+cutoff_len: 4096
+max_samples: null
+overwrite_cache: true
+preprocessing_num_workers: 8
+dataloader_num_workers: 4
+
+### output
+output_dir: LLaMA-Factory/saves/sa/qwen3-8b/lora
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: false
+save_only_model: false
+report_to: wandb  # [none, wandb, tensorboard, swanlab, mlflow]
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-6
+num_train_epochs: 12.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+
+### eval (optional)
+# eval_dataset: arc_dpo
+# val_size: 0.05
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500
+
