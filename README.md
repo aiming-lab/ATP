@@ -232,7 +232,7 @@ Models:     src/config/model/qwen3_8B.yaml and *_sa_dpo.yaml/*_sa_grpo.yaml/*_ma
 Testing:    src/config/test_sa.yaml, src/config/test_ma.yaml
 ```
 
-## Paper and Citation
+## Citation
 
 If you use this repository or results, please cite the paper: 
 ```bibtex
