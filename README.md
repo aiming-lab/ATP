@@ -236,13 +236,11 @@ Testing:    src/config/test_sa.yaml, src/config/test_ma.yaml
 
 If you use this repository or results, please cite the paper: 
 ```bibtex
-@misc{han2025alignment,
-    title={Alignment Tipping Process: How Self-Evolution Pushes LLM Agents Off the Rails},
-    author={Siwei Han and Jiaqi Liu and Yaofeng Su and Wenbo Duan and Xinyuan Liu and Cihang Xie and Mohit Bansal and Mingyu Ding and Linjun Zhang and Huaxiu Yao},
-    year={2025},
-    eprint={2510.04860},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG}
+@article{han2025alignment,
+  title={Alignment Tipping Process: How Self-Evolution Pushes LLM Agents Off the Rails},
+  author={Han, Siwei and Liu, Jiaqi and Su, Yaofeng and Duan, Wenbo and Liu, Xinyuan and Xie, Cihang and Bansal, Mohit and Ding, Mingyu and Zhang, Linjun and Yao, Huaxiu},
+  journal={arXiv preprint arXiv:2510.04860},
+  year={2025}
 }
 ```
 
